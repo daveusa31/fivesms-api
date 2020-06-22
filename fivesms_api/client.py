@@ -51,7 +51,7 @@ class FiveSms:
         path = "guest/products/{}/{}".format(country, operator)
         return self.__request(path)
 
-    def get_number(self, country="any", operator="any", service):
+    def get_number(self, service, country="any", operator="any"):
         self.__check_args(country=country, operator=operator, service=service)
 
         path = "user/buy/activation/{/{}/{}".format(country, operator, service)
