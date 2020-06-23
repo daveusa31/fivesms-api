@@ -351,19 +351,19 @@ class FiveSms:
     def get_number(self, service, country="any", operator="any"):
         self.__check_args(country=country, operator=operator, service=service)
 
-        path = "user/buy/activation/{/{}/{}".format(country, operator, service)
+        path = "user/buy/activation/{}/{}/{}".format(country, operator, service)
         return self.__request(path)
 
     def check_order(self, order_id):
         path = "user/check/{}".format(order_id)
         return self.__request(path)
 
-    def set_status_ok(self, order_id):
-        path = "user/finish/{}".format(order_id)
+    def set_status_ok(self, order_id: int):
+        path = "user/finish/{}".format(int(order_id))
         return self.__request(path)
 
-    def cancel_order(self, order_id):
-        path = "user/cancel/{}".format(order_id)
+    def cancel_order(self, order_id: int):
+        path = "user/cancel/{}".format(int(order_id))
         return self.__request(path)
 
     def number_already_used(self, number):
