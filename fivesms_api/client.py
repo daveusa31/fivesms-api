@@ -354,7 +354,7 @@ class FiveSms:
         path = "user/buy/activation/{}/{}/{}".format(country, operator, service)
         return self.__request(path)
 
-    def check_order(self, order_id):
+    def get_sms(self, order_id):
         path = "user/check/{}".format(order_id)
         return self.__request(path)
 
@@ -366,8 +366,8 @@ class FiveSms:
         path = "user/cancel/{}".format(int(order_id))
         return self.__request(path)
 
-    def number_already_used(self, number):
-        path = "user/ban/{}".format(order_id)
+    def number_already_used(self, order_id):
+        path = "user/ban/{}".format(int(order_id))
         return self.__request(path)
 
     def __check_args(self, country=None, operator=None, service=None):
